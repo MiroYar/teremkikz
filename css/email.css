@@ -1,0 +1,68 @@
+.widebutton__popup {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.widebutton__popup-thanks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 35px;
+}
+
+.thankswindow {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    align-content: center;
+    background: linear-gradient(33deg, #e5e5e5, white);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.thankswindow > svg {
+    display: block;
+    margin: 25px auto;
+}
+
+.thankswindow > h2, h1 {
+    margin: 25px 35px;
+    text-align: center;
+}
+
+.thankswindow > button {
+    margin: 25px auto;
+    text-align: center;
+}
+
+.thankswindow > button:hover {
+    color: #82953f;
+    text-shadow: 0 0 2px #82953f;
+}
+
+@media screen and (max-width: 670px) {
+    .thankswindow {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 353px) {
+    .thankswindow > button {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+}
+
+/*Медиазапрос для модального окна с приветсвием,
+имеющим разрешение с соотношением сторон 600/600 плюс 35px padding со всех сторон*/
+@media screen and (max-width: 670px) and (min-aspect-ratio: 1/1) {
+    .widebutton__popup-thanks {
+      align-items: flex-start;
+    }
+}

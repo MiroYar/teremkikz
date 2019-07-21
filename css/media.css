@@ -1,0 +1,172 @@
+@media screen and (max-width: 1110px) {
+    #contactsdata__cardswrap {
+        grid-template-columns: 1fr;
+        grid-row-gap: var(--padTB02);
+    }
+
+    #contactsdata__card01, #contactsdata__card02 {
+        justify-self: center;
+    }
+}
+
+@media screen and (max-width: 929px) {
+    :root {
+        --padTB01: 70px;
+        --padTB02: 50px;
+    }
+    
+/* НАВИГАЦИЯ */
+    nav {
+        transform: translateY(-240px);
+    }
+
+/* Меню */
+    #menu {
+        width: 100%;
+        margin: 60px 0 0 0;
+        background: linear-gradient(33deg, #cbedfa, white);
+    }
+    
+    #menu__ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: right;
+    }
+
+    .menuitem {
+        padding: 0 30px;
+        width: auto;
+    }
+
+/* Toolbar */
+    #toolbar {
+        transform: translateY(240px);
+    }
+
+    #toolbar.toolbar-up {
+        right: 0;
+    }
+
+    .contactsdata__cardbtns {
+        grid-template-columns: repeat(auto-fit, 70px);
+    }
+    
+    .contactsdata__mesbtn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contactsdata__mesbtn-phone {
+        display: block;
+    }
+        
+    #requestform {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+    }
+
+    #requestform > div:last-child {
+        grid-column: 1/-1;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .frame {
+        max-width: 570px;
+    }
+
+    #aboutbase__txtwrap {
+        grid-template-columns: 1fr;
+    }
+
+    #aboutbase__txttop {
+        columns: 1;
+    }
+
+    #housesoffer__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .housesoffer__txtwrap {
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+    }
+
+    #contactsdata__cardtxt01,
+    #contactsdata__cardtxt02 {
+        align-content: center;
+    }
+
+    .contactsdata__ava {
+        grid-row: 1/2;
+    }
+
+    .contactsdata__cardbtns {
+        grid-column: 1/3;
+        grid-template-columns: repeat(auto-fit, 100px);
+    }
+
+    #contactsdata__card01 .contactsdata__cardbtns {
+        justify-content: center;
+    }
+
+    #contactsdata__card02 .contactsdata__cardbtns {
+        justify-content: center;
+    }
+
+    .contactsdata__mesbtn {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    header p {
+        width: 260px;
+        font-size: 39px;
+        font-weight: 200;
+    }
+    
+    header span {
+        font-size: 48px;
+    }
+
+    #contactsdata__cardtxt01,
+    #contactsdata__cardtxt02 {
+        text-align: center;
+    }
+    
+    #requestform {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 409px) {
+    #contactsdata__card01,
+    #contactsdata__card02 {
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+    }
+    
+    #contactsdata__card01 .contactsdata__ava {
+        justify-self: center;
+    }
+
+    #contactsdata__card02 .contactsdata__ava {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+    }
+
+    .contactsdata__cardbtns {
+        grid-column: 1;
+    }
+}
+
+/* Медиазапрос для модального окна с изображением образца договора,
+имеющим разрешение с соотношением сторон 1187/954 плюс 35px padding с каждой стороны */
+@media screen and (min-aspect-ratio: 1257/1024) {
+    .widebutton__popup-sample {
+      align-items: flex-start;
+    }
+}

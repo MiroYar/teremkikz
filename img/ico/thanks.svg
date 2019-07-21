@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 368 368" width="150px" height="150px">
+    <style>
+        @keyframes outline {
+            0% {
+                stroke-dasharray: 0 1383;
+                stroke-opacity: 0;
+            }
+            9% {
+                stroke-opacity: 0;
+            }
+            10% {
+                stroke-dasharray: 1 1383;
+                stroke-opacity: 1;
+                animation-timing-function: ease-in;
+            }
+            25% {
+                stroke-dasharray: 1383 1383;
+            }
+            100% {
+                stroke-dasharray: 1383 1383;
+            }
+        }
+
+        #thanks__outline {
+            animation: outline 10s infinite alternate;
+        }
+
+        @keyframes smile {
+            0% {
+                stroke-dasharray: 252 252;
+                stroke-dashoffset: -42;
+            }
+            25% {
+                stroke-dashoffset: -42;
+            }
+            30% {
+                stroke-dashoffset: 0;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        #thanks__smile {
+            animation: smile 10s infinite alternate;
+        }
+    </style>
+    <linearGradient id="A" gradientUnits="userSpaceOnUse" x1="4.099" y1="268.829" x2="363.901" y2="35.171">
+        <stop offset="0" stop-color="#c2ae97"/>
+        <stop offset="1" stop-color="#f2dabd"/>
+    </linearGradient>
+    <animate href="#eyer"
+        attributeName="d"
+        values="M114,104a20,20 0 1,0 40,0a20,20 0 1,0 -40,0;
+            M154,104c0,11-9,20-20,20s-20-9-20-20c0,8.8,9,20,20,20S154,112.8,154,104z;
+            M114,104a20,20 0 1,0 40,0a20,20 0 1,0 -40,0"
+        keyTimes="0; .5; 1"
+        dur=".5s"
+        calcMode="linear"
+        begin="5s"
+        repeatCount="2"
+        restart="whenNotActive"
+    />
+    <animate href="#eyel"
+        attributeName="d"
+        values="M214,104a20,20 0 1,0 40,0a20,20 0 1,0 -40,0;
+            M254,104c0,11-9,20-20,20s-20-9-20-20c0,8.8,9,20,20,20S254,112.8,254,104z;
+            M214,104a20,20 0 1,0 40,0a20,20 0 1,0 -40,0"
+        keyTimes="0; .5; 1"
+        dur=".5s"
+        calcMode="linear"
+        begin="5s"
+        repeatCount="2"
+        restart="whenNotActive"
+    />
+    <g stroke="#000" stroke-width="12" stroke-linejoin="round">
+        <g stroke-linecap="round" stroke-miterlimit="10">
+            <path id="thanks__outline" d="M136 296H38c-16.5 0-30-13.5-30-30V38C8 21.5 21.5 8 38 8h292c16.5 0 30 13.5 30 30v228c0 16.5-13.5 30-30 30H136l-64 64v-64" fill="url(#A)"/>
+            <path id="thanks__smile" d="M296,168c0,35.2-28.8,64-64,64h-96c-19.2,0-36.4-8.5-48.2-22" fill="none"/>
+        </g>
+        <path id="eyer" d="M114,104a20,20 0 1,0 40,0a20,20 0 1,0 -40,0"/>
+        <path id="eyel" d="M214,104a20,20 0 1,0 40,0a20,20 0 1,0 -40,0"/>
+    </g>
+</svg>

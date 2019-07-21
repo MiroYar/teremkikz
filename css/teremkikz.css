@@ -1,0 +1,742 @@
+:root {
+    --colbg: #91a646;
+    --colbtn01: #fff;
+    --colbtn02: #e9edda;
+    --colnav: #fff;
+    --col01: rgba(255, 255, 255, .80);
+    --col02: #e9edda;
+    --shw01: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    --padTB01: 150px;
+    --padTB02: 70px;
+}
+
+button {
+    all: unset;
+    border: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/bg.jpg) no-repeat center;
+    background-color: var(--colbg);
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+}
+
+label, ul, li, a, button {
+    display: block;
+    text-decoration: none;
+}
+
+.frame {
+    position: relative;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Preloader===================================== */
+#preloader {
+    display: grid;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    background: white;
+}
+
+/* НАВИГАЦИЯ */
+nav {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    min-height: 60px;
+    background: white;
+    border-radius: 0 0 0 100%;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: linear-gradient(33deg, #fcfcfc, white);
+    transform: translateY(-60px);
+    transition: 0.5s ease-in-out;
+}
+
+nav.nav-down  {
+    border-radius: 0;
+    transform: translateY(0);
+}
+
+.navframe {
+    display: flex;
+    position: relative;
+    max-width: 1230px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Logotype--------------------------------------- */
+#logotype {
+    position: absolute;
+    z-index: 3;
+    max-width: 400px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#logotype.logo-nav {
+    max-width: 105px;
+}
+#logotype.logo-average {
+    max-width: 175px;
+}
+
+#logotype.logo-navtransition {
+    transition: 0.5s ease-in-out;
+}
+
+#logotype.logo-transition {
+    transition: left 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), top 1s cubic-bezier(0.68, -0.55, 0.265, 1.55), margin-right 1s linear, max-width  1s linear;
+}
+
+#logotype__img {
+    width: 100%;
+    height: auto;
+}
+
+/* Menu----------------------------------- */
+#menu {
+    margin: 0 auto;
+}
+
+#menu__ul {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.menuitem {
+    position: relative;
+    padding: 0 15px;
+    overflow: hidden;
+    color: black;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+/* Toolbar------------------------------- */
+#toolbar {
+    position: absolute;
+    z-index: 2;
+    right: 30px;
+    min-width: 70px;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    transform: translateY(60px);
+    transition: 0.5s ease-in-out;
+}
+
+#toolbar.toolbar-up {
+    border-radius: 0;
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+#toolbar__ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Toolbar buttons------------------------------- */
+#menubtn, #upbtn {
+    position: relative;
+    width: 70px;
+    height: 30px;
+    transition: 0.5s ease-in-out;
+}
+
+#menubtn span,
+#menubtn span:before,
+#menubtn span:after {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    margin: -1px 0 0 -10px;
+    background: black;
+}
+
+#menubtn span:before,
+#menubtn span:after {
+    content: '';
+}
+
+#menubtn span:before {
+    transform: translateY(-5px)
+}
+
+#menubtn span:after {
+    transform: translateY(5px)
+}
+
+/* Down toolbar button type */
+#menubtn.menubtn-down span {
+    background: rgba(0, 0, 0, 0);
+    transform: rotate(90deg);
+}
+
+#menubtn.menubtn-down span:before {
+    width: 16px;
+    transform: rotate(50deg);
+    transform-origin: right bottom;
+}
+
+#menubtn.menubtn-down span:after {
+    width: 16px;
+    transform: rotate(-50deg);
+    transform-origin: right top;
+}
+
+/* Up toolbar button type */
+#menubtn.menubtn-up span {
+    background: rgba(0, 0, 0, 0);
+    transform: rotate(-90deg);
+}
+
+#menubtn.menubtn-up span:before {
+    width: 16px;
+    transform: rotate(50deg);
+    transform-origin: right bottom;
+}
+
+#menubtn.menubtn-up span:after {
+    width: 16px;
+    transform: rotate(-50deg);
+    transform-origin: right top;
+}
+
+/* Close toolbar button type */
+#menubtn.menubtn-close span {
+    background: rgba(0, 0, 0, 0);
+}
+
+#menubtn.menubtn-close span:before {
+    transform: rotate(-45deg);
+}
+
+#menubtn.menubtn-close span:after {
+    transform: rotate(45deg);
+}
+
+/* Toolbar buttons if toolbar down */
+#menubtn.toolbar-down,
+#upbtn.toolbar-down {
+    height: 60px;
+}
+
+#upbtn {
+    display: none;
+}
+
+#upbtn span {
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -1px;
+    background: black;
+    border-radius: 1px;
+}
+
+#upbtn span:before,
+#upbtn span:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -1px;
+    background: black;
+    border-radius: 1px;
+}
+
+#upbtn span:before {
+    transform: rotate(-33deg);
+    transform-origin: right top;
+}
+
+#upbtn span:after {
+    transform: rotate(33deg);
+    transform-origin: left top;
+}
+
+/* Header============================================ */
+header {
+    padding: 370px 0 var(--padTB01);
+}
+
+#maintitle {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    background: linear-gradient(33deg, rgba(130, 149, 63, .6), rgba(217, 204, 191, .9));
+}
+
+header p {
+    margin-left: auto;
+    max-width: 400px;
+    color: white;
+    font-size: 60px;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: right;
+    text-shadow: 0 5px 10px #a99e95;
+}
+
+header span {
+    font-size: 72px;
+}
+
+/* About baze======================================== */
+#aboutbase {
+    padding: var(--padTB01) 0;
+    background: linear-gradient(33deg, #dee4c8, var(--col01));
+}
+
+#aboutbase span {
+    font-weight: 400;
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#aboutbase__txtwrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--padTB02) 30px;
+    margin: 31px 0;
+}
+
+#aboutbase__txttop {
+    grid-column: 1/-1;
+    columns: auto 2;
+    column-gap: 30px;
+}
+
+.aboutbase__galtxt {
+    display: grid;
+    grid-row-gap: 26px;
+    align-content: start;
+}
+
+#aboutbase p {
+    text-align: justify;
+}
+
+/* About houses====================================== */
+#abouthouses {
+    background: linear-gradient(45deg, #e9edda, #f4f6ed);
+}
+
+/* Top of houses------------------------------------- */
+.topofsection {
+    padding: var(--padTB01) 0 31px 0;
+}
+
+.topofsection p {
+    margin: 31px 0 0 0;
+}
+
+/* Houses offer-------------------------------------- */
+#housesoffer {
+    padding: var(--padTB02) 0;
+    background: linear-gradient(33deg, #d9ccbf, #f2e3d5);
+}
+
+#housesoffer__wrapper {
+    display: grid;
+    grid-row-gap: var(--padTB02);
+}
+
+.housesoffer__txtwrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.housesoffer__txt {
+    display: grid;
+    grid-row-gap: 12px;
+    align-content: start;
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.housesoffer__txt span {
+    font-weight: 400;
+}
+
+.spanupper {
+    text-transform: uppercase;
+}
+
+/* Houses bottom------------------------------------- */
+#abouthouses__bottom {
+    padding: 35px 0 var(--padTB01) 0;
+}
+
+.widebutton {
+    background: var(--colbtn01);
+    box-shadow: var(--shw01);
+    transition: 0.1s linear;
+}
+
+.widebutton-pressed {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.widebutton__button {
+    margin: 0 auto;
+    padding: 8px 0;
+    width: 230px;
+    background: rgba(0, 0, 0, 0);
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.widebutton__button:hover {
+    color: #82953f;
+    text-shadow: 0 0 2px #82953f;
+}
+
+.widebutton__sample {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 35px;
+}
+  
+.samplewindow {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(33deg, #e5e5e5, white);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+}
+  
+.samplewindow__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+  
+.samplewindow__clsbtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: green;
+    border-radius: 0 0 0 50%;
+}
+
+/* Contacts========================================== */
+#contactsdata {
+    background: linear-gradient(45deg, #f4f6ed, white);
+}
+
+/* Contact cards------------------------------------- */
+#contactsdata__cards {
+    position: relative;
+    padding: var(--padTB02) 0;
+}
+
+.bubblespanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#contactsdata__cardswrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    font-size: 18px;
+}
+
+#contactsdata__card01 {
+    display: grid;
+    grid-template-columns: 170px minmax(150px, 570px);
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+}
+
+#contactsdata__card02 {
+    display: grid;
+    grid-template-columns: minmax(150px, 570px) 170px;
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+    justify-content: end;
+}
+
+.contactsdata__ava {
+    grid-row: 1/3;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: burlywood;
+    box-shadow: var(--shw01);
+}
+
+#contactsdata__card01 .contactsdata__ava {
+    background: url(../img/ava/user.svg)
+}
+
+#contactsdata__card02 .contactsdata__ava {
+    grid-column: 2;
+    background: url(../img/ava/user.svg)
+}
+
+#contactsdata__cardtxt01,
+#contactsdata__cardtxt02 {
+    display: grid;
+}
+
+#contactsdata__cardtxt02 {
+    text-align: right;
+}
+
+h3 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.contactsdata__cardbtns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    grid-gap: 10px;
+}
+ 
+#contactsdata__card01 .contactsdata__cardbtns {
+    justify-content: start;
+}
+  
+#contactsdata__card02 .contactsdata__cardbtns {
+    justify-content: end;
+}
+  
+.contactsdata__mesbtn {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 20% 80%, #f2e3d5 50%, white);
+    border-radius: 8%;
+    box-shadow: var(--shw01);
+    transition: 0.1s linear;
+}
+
+.contactsdata__mesbtn-pressed {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+.contactsdata__mesbtn-phone {
+    display: none;
+}
+
+.contactsdata__mesbtn img {
+    display: inherit;
+    margin: 30%;
+    width: 40%;
+    height: 40%;
+}
+
+/* Map----------------------------------------------- */
+#contactsdata__map {
+    padding: var(--padTB02) 0 0 0;
+}
+
+#contactsdata__gmap {
+    margin: 26px 0 0 0;
+    height: 500px;
+}
+
+/* Request------------------------------------------- */
+#contactsdata__request {
+    padding: var(--padTB02) 0 var(--padTB01) 0;
+    background: linear-gradient(33deg, #82953f, #bdca90);
+}
+
+.p4 {
+    margin: 0 0 22px 0;
+}
+
+#contactsdata__request span {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#requestform {
+    display: grid;
+    grid-template-columns: 270px 270px minmax(270px, 570px);
+    grid-column-gap: 30px;
+    margin: 0 0 35px 0;
+}
+
+label {
+    margin: 0 0 16px 0;
+}
+
+input[type="text"] {
+    box-sizing: border-box;
+    padding: 0 5px;
+    border: 1px solid black;
+    color: #76776c;
+    font-size: 16px;
+    line-height: 25px;
+	background: #c8d3a3;
+}
+
+/* Решение для предотвращения применения браузером стилей по умолчанию для автозаполнения */
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:hover, 
+input[type="text"]:-webkit-autofill:focus
+input[type="text"]:-webkit-autofill {
+    box-sizing: border-box;
+    padding: 0 5px;
+    border: 1px solid black;
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    -webkit-text-fill-color: #76776c;
+    -webkit-box-shadow: 0 0 0px 1000px #c8d3a3 inset;
+    box-shadow: 0 0 0px 1000px #c8d3a3 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.in1 {
+    margin: 0 0 16px 0;
+    width: 100%;
+}
+
+.in2 {
+    margin-left: 12px;
+    width: 60px;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset li {
+    margin: 0 30px 0 0;
+    float: left;
+}
+
+fieldset label {
+    font-size: 18px;
+}
+
+legend {
+    margin: 0 0 16px 0;
+}
+
+/* Checkbox stylization */
+#contactsdata__request input[type='checkbox'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.check {
+    display: inline-block;
+    border: 1px solid black;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin-right: 12px;
+}
+
+.check:before {
+    content: '';
+    background: black;
+    width: 11px;
+    height: 11px;
+    opacity: 0;
+    transition: 0.3s;
+    position: absolute;
+}
+
+input:checked + .check:before {
+    opacity: 1;
+}
+
+/* Textarea stylization */
+textarea {
+    padding: 1px 5px;
+    box-sizing: border-box;
+	resize: none;
+	width: 100%;
+    height: 190px;
+    color: #76776c;
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+	background: #c8d3a3;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+/* Footer============================================ */
+footer {
+    padding: 27px 0;
+}
+
+footer p, footer a {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer a {
+    display: inline;
+    border-bottom: 2px dotted;
+}

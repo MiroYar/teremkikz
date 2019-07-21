@@ -1,0 +1,44 @@
+@keyframes outline {
+    0% {
+        stroke-dasharray: 0 1383;
+        stroke-opacity: 0;
+    }
+    9% {
+        stroke-opacity: 0;
+    }
+    10% {
+        stroke-dasharray: 1 1383;
+        stroke-opacity: 1;
+        animation-timing-function: ease-in;
+    }
+    25% {
+        stroke-dasharray: 1383 1383;
+    }
+    100% {
+        stroke-dasharray: 1383 1383;
+    }
+}
+
+@keyframes smile {
+    0% {
+        stroke-dasharray: 252 252;
+        stroke-dashoffset: -42;
+    }
+    25% {
+        stroke-dashoffset: -42;
+    }
+    30% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+#thanks__outline {
+    animation: outline 10s infinite alternate;
+}
+
+#thanks__smile {
+    animation: smile 10s infinite alternate;
+}
